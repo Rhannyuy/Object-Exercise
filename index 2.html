@@ -22,26 +22,28 @@
 			}
 
 			this.getLetterCount = function() {
-				var sum = 0;
-				
-				for (var i = 0; i < this.wordsArray.length; i++){
-					var word = this.wordsArray[i];
-					sum = word.length + sum;
-
-				}
-				i = i - 1;
-				return sum + i;
 				// Find the amount of letters in the sentence
-			}
+				arr = arr.join(" ");
+		                count = 0;
+		                for(var i = 0; i<arr.length; i++){
+		                    count = count + 1;
+		                }
+		                return count;
+		            }
+
 
 			this.reverse = function() {
-				return this.wordsArray.reverse();
 				// Reverse the sentence, in place
+				var newArr = [];
+		                for (var i = this.wordsArray.length -1; i >= 0; i--){
+		                    newArr.push(this.wordsArray[i]);
+		                }
+		                this.wordsArray = newArr;   
 			}
 
 			this.getWordAt = function(i) {
-				return this.wordsArray[i]
 				// Return the word at index i
+				return this.wordsArray[i]
 			}
 		}
 
@@ -54,8 +56,8 @@
 		s.reverse();
 		console.log(s.getWordAt(0) === "Computer");
 
-		
-        /*
+		/*
+
 		Create a new constructor function for a Paragraph
 
 		You should be able to
@@ -68,8 +70,8 @@
 			p.getWordAt(i); // where i is some integer
 			p.getSentenceCount();
 			p.addToHTML(document.getElementById("paragraphs"));
-           */
-	
+
+	*/
 
 	</script>
 </body>
